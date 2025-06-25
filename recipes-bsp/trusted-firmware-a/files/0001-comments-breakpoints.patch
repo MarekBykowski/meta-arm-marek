@@ -1,0 +1,27 @@
+From 92317809950ddba91b8d676550f5a2589fe8f6d3 Mon Sep 17 00:00:00 2001
+From: Marek Bykowski <marek.bykowski@gmail.com>
+Date: Tue, 24 Jun 2025 14:43:26 +0000
+Subject: [PATCH] comments, breakpoints
+
+Upstream-Status: Denied
+
+Signed-off-by: Marek Bykowski <marek.bykowski@gmail.com>
+---
+ bl1/bl1_main.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/bl1/bl1_main.c b/bl1/bl1_main.c
+index 6fe551188..65137f5ed 100644
+--- a/bl1/bl1_main.c
++++ b/bl1/bl1_main.c
+@@ -96,6 +96,7 @@ void bl1_main(void)
+ 	NOTICE(FIRMWARE_WELCOME_STR);
+ 	NOTICE("BL1: %s\n", version_string);
+ 	NOTICE("BL1: %s\n", build_message);
++	NOTICE("mb: Hello from the bootom of my heart\n");
+ 
+ 	INFO("BL1: RAM %p - %p\n", (void *)BL1_RAM_BASE, (void *)BL1_RAM_LIMIT);
+ 
+-- 
+2.34.1
+

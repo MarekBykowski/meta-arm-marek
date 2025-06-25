@@ -1,0 +1,42 @@
+From 9b7a82965bc1a1c7594b7a0973dc178750a020a1 Mon Sep 17 00:00:00 2001
+From: Marek Bykowski <marek.bykowski@gmail.com>
+Date: Wed, 25 Jun 2025 11:39:00 +0000
+Subject: [PATCH] Remove branching ot itself
+
+Upstream-Status: Denied
+
+Signed-off-by: Marek Bykowski <marek.bykowski@gmail.com>
+---
+ arch/arm/cpu/armv8/start.S | 2 +-
+ arch/arm/lib/crt0_64.S     | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/arch/arm/cpu/armv8/start.S b/arch/arm/cpu/armv8/start.S
+index cf9eadc8d19..6d5baa750be 100644
+--- a/arch/arm/cpu/armv8/start.S
++++ b/arch/arm/cpu/armv8/start.S
+@@ -56,7 +56,7 @@ reset:
+ 	/* mb: reset vector */
+ 	.globl mb_reset_vector
+ mb_reset_vector:
+-	0:	b 0b
++	/*0:	b 0b*/
+ 	/* Allow the board to save important registers */
+ 	b	save_boot_params
+ .globl	save_boot_params_ret
+diff --git a/arch/arm/lib/crt0_64.S b/arch/arm/lib/crt0_64.S
+index b405092c291..aa693459775 100644
+--- a/arch/arm/lib/crt0_64.S
++++ b/arch/arm/lib/crt0_64.S
+@@ -142,7 +142,7 @@ ENTRY(_main)
+ 
+ relocation_return:
+ 	/* mb: post relocation*/
+-	0: b 0b
++	/*0: b 0b*/
+ 
+ /*
+  * Set up final (full) environment
+-- 
+2.34.1
+
