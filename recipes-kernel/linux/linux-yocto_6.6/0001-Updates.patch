@@ -1,0 +1,46 @@
+From 6d503976240e5e6d99ae90c066dd0e930cd8349d Mon Sep 17 00:00:00 2001
+From: Marek Bykowski <marek.bykowski@gmail.com>
+Date: Thu, 26 Jun 2025 20:04:03 +0000
+Subject: [PATCH] Updates
+
+Upstream-Status: Denied
+
+Signed-off-by: Marek Bykowski <marek.bykowski@gmail.com>
+---
+ arch/arm64/mm/fault.c | 9 +++++++--
+ 1 file changed, 7 insertions(+), 2 deletions(-)
+
+diff --git a/arch/arm64/mm/fault.c b/arch/arm64/mm/fault.c
+index 075883dedbf5..c284f645e019 100644
+--- a/arch/arm64/mm/fault.c
++++ b/arch/arm64/mm/fault.c
+@@ -704,12 +704,15 @@ static int __kprobes do_page_fault(unsigned long far, unsigned long esr,
+ 	return 0;
+ }
+ 
+-extern int expender_map(unsigned long far, unsigned int esr,
++extern int expender_map(unsigned long far, unsigned long esr,
+ 			struct pt_regs *regs);
+ static int __kprobes do_translation_fault(unsigned long far,
+-					  unsigned int esr,
++					  unsigned long esr,
+ 					  struct pt_regs *regs)
+ {
++	struct device_node *np;
++	struct platform_device *pdev;
++
+ 	unsigned long addr = untagged_addr(far);
+ 
+ 	np = of_find_compatible_node(NULL, NULL, "intel,extender");
+@@ -730,6 +733,8 @@ static int __kprobes do_translation_fault(unsigned long far,
+ 	if (is_ttbr0_addr(addr))
+ 		return do_page_fault(far, esr, regs);
+ 
++	do_bad_area(far, esr, regs);
++
+ 	return 0;
+ }
+ 
+-- 
+2.34.1
+

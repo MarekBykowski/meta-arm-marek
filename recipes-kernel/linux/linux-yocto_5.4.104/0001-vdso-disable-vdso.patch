@@ -1,0 +1,26 @@
+From 51240286e44357a4baa4a2c27817f84a5ac679cc Mon Sep 17 00:00:00 2001
+From: Marek Bykowski <marek.bykowski@gmail.com>
+Date: Thu, 26 Jun 2025 17:50:39 +0000
+Subject: [PATCH] vdso: disable vdso
+
+Signed-off-by: Marek Bykowski <marek.bykowski@gmail.com>
+---
+ arch/arm64/Kconfig | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+index 9c8ea5939865..cbe70cc180c1 100644
+--- a/arch/arm64/Kconfig
++++ b/arch/arm64/Kconfig
+@@ -167,7 +167,7 @@ config ARM64
+ 	select HAVE_SYSCALL_TRACEPOINTS
+ 	select HAVE_KPROBES
+ 	select HAVE_KRETPROBES
+-	select HAVE_GENERIC_VDSO
++	#select HAVE_GENERIC_VDSO
+ 	select IOMMU_DMA if IOMMU_SUPPORT
+ 	select IRQ_DOMAIN
+ 	select IRQ_FORCED_THREADING
+-- 
+2.44.1
+
