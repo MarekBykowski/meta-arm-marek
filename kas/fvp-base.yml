@@ -1,0 +1,60 @@
+header:
+  version: 13
+
+machine: fvp-base
+distro: poky
+
+defaults:
+  repos:
+    refspec: yocto-5.3.3
+
+repos:
+  bitbake:
+    url: https://git.openembedded.org/bitbake
+    path: layers/bitbake
+    layers:
+      .: disabled
+
+  openembedded-core:
+    url: https://git.openembedded.org/openembedded-core
+    path: layers/openembedded-core
+    layers:
+      meta:
+
+  meta-yocto:
+    url: https://git.yoctoproject.org/meta-yocto
+    path: layers/meta-yocto
+    layers:
+      meta-poky:
+      meta-yocto-bsp:
+
+  meta-arm:
+    url: https://git.yoctoproject.org/meta-arm
+    path: layers/meta-arm
+    refspec: yocto-5.3
+    layers:
+      meta-arm:
+      meta-arm-bsp:
+      meta-arm-toolchain:
+
+  meta-arm-training:
+    url: https://github.com/MarekBykowski/meta-arm-training.git
+    path: layers/meta-arm-training
+    layers:
+      .:
+
+local_conf_header:
+  base: |
+    INHERIT += "fvpboot"
+    LICENSE_FLAGS_ACCEPTED = "Arm-FVP-EULA"
+    INHIBIT_PACKAGE_STRIP = "1"
+    PREFERRED_VERSION_virtual/kernel = "6.6%"
+    PREFERRED_VERSION_u-boot = "2024.01"
+    EXTRA_IMAGE_FEATURES ?= "debug-tweaks"
+    USER_CLASSES ?= "buildstats"
+    PATCHRESOLVE = "noop"
+    PACKAGECONFIG:append:pn-qemu-system-native = " sdl"
+    CONF_VERSION = "2"
+
+target:
+  - core-image-minimal
