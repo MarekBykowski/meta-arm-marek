@@ -50,7 +50,7 @@ local_conf_header:
     INHIBIT_PACKAGE_STRIP = "1"
     PREFERRED_VERSION_virtual/kernel = "6.6%"
     PREFERRED_VERSION_u-boot = "2024.01"
-    EXTRA_IMAGE_FEATURES ?= "debug-tweaks"
+    EXTRA_IMAGE_FEATURES ?= "allow-root-login empty-root-password"
     USER_CLASSES ?= "buildstats"
     PATCHRESOLVE = "noop"
     PACKAGECONFIG:append:pn-qemu-system-native = " sdl"
