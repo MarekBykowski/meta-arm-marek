@@ -37,9 +37,9 @@ repos:
       meta-arm-bsp:
       meta-arm-toolchain:
 
-  meta-arm-training:
-    url: https://github.com/MarekBykowski/meta-arm-training.git
-    path: layers/meta-arm-training
+  meta-arm-marek:
+    url: https://github.com/MarekBykowski/meta-arm-marek.git
+    path: layers/meta-arm-marek
     layers:
       .:
 

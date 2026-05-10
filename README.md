@@ -1,4 +1,4 @@
-# meta-arm-training
+# meta-arm-marek
 
 Yocto layer for ARM FVP-Base development and training.
 
@@ -14,7 +14,7 @@ Yocto layer for ARM FVP-Base development and training.
 
 ```bash
 mkdir yocto-new && cd yocto-new
-kas checkout /path/to/meta-arm-training/kas/fvp-base.yml
+kas checkout /path/to/meta-arm-marek/kas/fvp-base.yml
 source layers/openembedded-core/oe-init-build-env arm-aem-build
 bitbake core-image-minimal
 ```
@@ -22,8 +22,8 @@ bitbake core-image-minimal
 ## Running the FVP
 
 ```bash
-./layers/meta-arm-training/scripts/run.sh
-./layers/meta-arm-training/scripts/run.sh armds  # with Arm DS connection
+./layers/meta-arm-marek/scripts/run.sh
+./layers/meta-arm-marek/scripts/run.sh armds  # with Arm DS connection
 ```
 
 ## Maintainer
