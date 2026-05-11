@@ -40,6 +40,7 @@ repos:
   meta-arm-marek:
     url: https://github.com/MarekBykowski/meta-arm-marek.git
     path: layers/meta-arm-marek
+    refspec: arm-aem-whinlatter
     layers:
       .:
 
