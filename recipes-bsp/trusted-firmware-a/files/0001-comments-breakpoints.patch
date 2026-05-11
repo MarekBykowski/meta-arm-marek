@@ -14,9 +14,9 @@ diff --git a/bl1/bl1_main.c b/bl1/bl1_main.c
 index 6fe551188..65137f5ed 100644
 --- a/bl1/bl1_main.c
 +++ b/bl1/bl1_main.c
-@@ -96,6 +96,7 @@ void bl1_main(void)
+@@ -71,6 +71,7 @@ void bl1_main(void)
  	NOTICE(FIRMWARE_WELCOME_STR);
- 	NOTICE("BL1: %s\n", version_string);
+ 	NOTICE("BL1: %s\n", build_version_string);
  	NOTICE("BL1: %s\n", build_message);
 +	NOTICE("mb: Hello from the bootom of my heart\n");
  
