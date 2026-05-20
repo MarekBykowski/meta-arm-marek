@@ -16,8 +16,8 @@ Yocto layer for ARM FVP-Base development and training.
 mkdir yocto-new && cd yocto-new
 # You need to get kas file fvp-base.yml somehow
 kas checkout <path to fvp-base.yml>
-source layers/openembedded-core/oe-init-build-env
-bitbake core-image-minimal
+
+source layers/openembedded-core/oe-init-build-env build && bitbake u-boot core-image-minimal
 ```
 
 ## Running the FVP
