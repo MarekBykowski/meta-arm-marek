@@ -4,26 +4,25 @@ header:
 machine: fvp-base
 distro: poky
 
-defaults:
-  repos:
-    refspec: yocto-5.3.3
-
 repos:
   bitbake:
     url: https://git.openembedded.org/bitbake
     path: layers/bitbake
+    refspec: yocto-5.3.3
     layers:
       .: disabled
 
   openembedded-core:
     url: https://git.openembedded.org/openembedded-core
     path: layers/openembedded-core
+    refspec: fvp-whinlatter
     layers:
       meta:
 
   meta-yocto:
     url: https://git.yoctoproject.org/meta-yocto
     path: layers/meta-yocto
+    refspec: yocto-5.3.3
     layers:
       meta-poky:
       meta-yocto-bsp:
@@ -31,7 +30,7 @@ repos:
   meta-arm:
     url: https://git.yoctoproject.org/meta-arm
     path: layers/meta-arm
-    refspec: whinlatter
+    refspec: fvp-whinlatter
     layers:
       meta-arm:
       meta-arm-bsp:
@@ -40,7 +39,7 @@ repos:
   meta-arm-marek:
     url: https://github.com/MarekBykowski/meta-arm-marek.git
     path: layers/meta-arm-marek
-    refspec: arm-aem-whinlatter
+    refspec: fvp-whinlatter
     layers:
       .:
 
