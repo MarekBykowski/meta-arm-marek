@@ -21,7 +21,7 @@ do_compile[noexec] = "1"
 
 do_install() {
     install -d ${D}${bindir}
-    install -m 0755 ${LAB_DIR}/mb-labs-run.sh ${D}${bindir}/mb-labs-run.sh
+    install -m 0755 ${LAB_DIR}/labs-run.sh ${D}${bindir}/labs-run.sh
 }
 
 RDEPENDS:${PN} += "vma-lab"
