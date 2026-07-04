@@ -3,7 +3,7 @@
 SCRIPT_DIR=$(dirname "$(realpath "$BASH_SOURCE")")
 BUILD_DIR=$(realpath "$SCRIPT_DIR/../../../build")
 RUNFVP="$SCRIPT_DIR/../../../layers/meta-arm/scripts/runfvp"
-FVPCONF="$BUILD_DIR/tmp/deploy/images/fvp-base/core-image-minimal-fvp-base.fvpconf"
+FVPCONF="$BUILD_DIR/tmp/deploy/images/fvp-base/core-image-marek-fvp-base.fvpconf"
 
 pathadd() {
     if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
