@@ -25,3 +25,7 @@ COMPATIBLE_MACHINE = "fvp-base"
 
 # meta-arm-bsp appends this 6.x patch; it does not apply to 4.19
 SRC_URI:remove:fvp-base = "file://0001-arm64-dts-fvp-Enable-virtio-rng-support.patch"
+
+# generated sources (consolemap_deftbl.c, oid_registry_data.c) embed their
+# absolute build path and trip the buildpaths QA check in the debug-src split
+INSANE_SKIP:${PN}-src += "buildpaths"
