@@ -19,7 +19,7 @@ do_compile() {
 do_install() {
     install -d ${D}${bindir}
     install -m 0755 ${S}/tools/mb_vma_lab/user_addr ${D}${bindir}/user_addr
-    install -m 0755 ${S}/tools/mb_vma_lab/run.sh ${D}${bindir}/mb-vma-lab-run
+    install -m 0755 ${S}/tools/mb_vma_lab/run.sh ${D}${bindir}/mb-vma-lab-run.sh
 }
 
 RRECOMMENDS:${PN} += "kernel-module-kernel-addr"
