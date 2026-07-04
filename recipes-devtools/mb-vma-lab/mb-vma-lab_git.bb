@@ -1,4 +1,4 @@
-SUMMARY = "Userspace probe for the mb_tests kernel exercise"
+SUMMARY = "Userspace probe for the mb-vma-lab kernel exercise"
 DESCRIPTION = "Prints a process's own view of its address space (.text, .data, \
 .bss, heap, stack) so it can be compared against the kernel's mm_struct view \
 reported by the kernel_addr module."
@@ -13,13 +13,13 @@ SRCREV = "${AUTOREV}"
 PV = "1.0+git"
 
 do_compile() {
-    oe_runmake -C ${S}/tools/mb_tests
+    oe_runmake -C ${S}/tools/mb_vma_lab
 }
 
 do_install() {
     install -d ${D}${bindir}
-    install -m 0755 ${S}/tools/mb_tests/user_addr ${D}${bindir}/user_addr
-    install -m 0755 ${S}/tools/mb_tests/run.sh ${D}${bindir}/mb-tests-run
+    install -m 0755 ${S}/tools/mb_vma_lab/user_addr ${D}${bindir}/user_addr
+    install -m 0755 ${S}/tools/mb_vma_lab/run.sh ${D}${bindir}/mb-vma-lab-run
 }
 
 RRECOMMENDS:${PN} += "kernel-module-kernel-addr"
