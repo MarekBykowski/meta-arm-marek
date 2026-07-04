@@ -12,14 +12,16 @@ SRC_URI = "git://github.com/MarekBykowski/linux_kernel_4_19.git;protocol=https;b
 SRCREV = "${AUTOREV}"
 PV = "1.0+git"
 
+LAB_DIR = "${S}/drivers/misc/mb_labs/mb_vma_lab"
+
 do_compile() {
-    oe_runmake -C ${S}/tools/mb_vma_lab
+    oe_runmake -C ${LAB_DIR}
 }
 
 do_install() {
     install -d ${D}${bindir}
-    install -m 0755 ${S}/tools/mb_vma_lab/user_addr ${D}${bindir}/user_addr
-    install -m 0755 ${S}/tools/mb_vma_lab/run.sh ${D}${bindir}/mb-vma-lab-run.sh
+    install -m 0755 ${LAB_DIR}/user_addr ${D}${bindir}/user_addr
+    install -m 0755 ${LAB_DIR}/run.sh ${D}${bindir}/mb-vma-lab-run.sh
 }
 
 RRECOMMENDS:${PN} += "kernel-module-kernel-addr"
