@@ -1,0 +1,7 @@
+Host qemu
+    HostName localhost
+    Port 2222
+    User root
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+    LogLevel ERROR
