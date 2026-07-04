@@ -1,4 +1,4 @@
-SUMMARY = "Userspace probe for the mb-vma-lab kernel exercise"
+SUMMARY = "Userspace probe for the vma-lab kernel exercise"
 DESCRIPTION = "Prints a process's own view of its address space (.text, .data, \
 .bss, heap, stack) so it can be compared against the kernel's mm_struct view \
 reported by the kernel_addr module."
@@ -12,7 +12,7 @@ SRC_URI = "git://github.com/MarekBykowski/linux_kernel_4_19.git;protocol=https;b
 SRCREV = "${AUTOREV}"
 PV = "1.0+git"
 
-LAB_DIR = "${S}/drivers/misc/mb_labs/mb_vma_lab"
+LAB_DIR = "${S}/drivers/misc/mb_labs/vma_lab"
 
 do_compile() {
     oe_runmake -C ${LAB_DIR}
@@ -21,7 +21,7 @@ do_compile() {
 do_install() {
     install -d ${D}${bindir}
     install -m 0755 ${LAB_DIR}/user_addr ${D}${bindir}/user_addr
-    install -m 0755 ${LAB_DIR}/run.sh ${D}${bindir}/mb-vma-lab-run.sh
+    install -m 0755 ${LAB_DIR}/run.sh ${D}${bindir}/vma-lab-run.sh
 }
 
 RRECOMMENDS:${PN} += "kernel-module-kernel-addr"
