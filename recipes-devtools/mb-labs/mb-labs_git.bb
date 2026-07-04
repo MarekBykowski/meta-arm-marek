@@ -24,7 +24,7 @@ do_install() {
     install -m 0755 ${LAB_DIR}/labs-run.sh ${D}${bindir}/labs-run.sh
 }
 
-RDEPENDS:${PN} += "vma-lab"
+RDEPENDS:${PN} += "vma-lab mmap-lab"
 RRECOMMENDS:${PN} += " \
     kernel-module-procfs-lab \
     kernel-module-completion-lab \
@@ -32,4 +32,13 @@ RRECOMMENDS:${PN} += " \
     kernel-module-workqueue-lab \
     kernel-module-radix-tree-lab \
     kernel-module-rcu-lab \
+    kernel-module-locking-lab \
+    kernel-module-lockdep-lab \
+    kernel-module-atomics-lab \
+    kernel-module-ptwalk-lab \
+    kernel-module-kprobe-lab \
+    kernel-module-mmap-lab \
+    kernel-module-seqlock-lab \
+    kernel-module-sysreg-lab \
+    kernel-module-hrtimer-lab \
 "

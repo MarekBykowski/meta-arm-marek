@@ -8,6 +8,9 @@ SRC_URI = "git://github.com/MarekBykowski/linux_kernel_4_19.git;protocol=https;n
 SRCREV_machine = "${AUTOREV}"
 SRCREV_meta = "${AUTOREV}"
 
+# lockdep and might_sleep checking for the locking labs
+SRC_URI += "file://labs-debug.cfg"
+
 LIC_FILES_CHKSUM = "file://COPYING;md5=bbea815ee2795b2f4230826c0c6b8814"
 LINUX_VERSION ?= "4.19.30"
 
