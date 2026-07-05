@@ -41,5 +41,6 @@ RRECOMMENDS:${PN} += " \
     kernel-module-seqlock-lab \
     kernel-module-sysreg-lab \
     kernel-module-ipi-lab \
+    kernel-module-context-lab \
     kernel-module-hrtimer-lab \
 "
