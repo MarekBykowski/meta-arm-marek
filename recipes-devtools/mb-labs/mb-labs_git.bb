@@ -30,6 +30,7 @@ RRECOMMENDS:${PN} += " \
     kernel-module-completion-lab \
     kernel-module-waitqueue-lab \
     kernel-module-workqueue-lab \
+    kernel-module-list-lab \
     kernel-module-radix-tree-lab \
     kernel-module-rcu-lab \
     kernel-module-locking-lab \
