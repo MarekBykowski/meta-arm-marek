@@ -42,5 +42,6 @@ RRECOMMENDS:${PN} += " \
     kernel-module-sysreg-lab \
     kernel-module-ipi-lab \
     kernel-module-context-lab \
+    kernel-module-current-lab \
     kernel-module-hrtimer-lab \
 "
