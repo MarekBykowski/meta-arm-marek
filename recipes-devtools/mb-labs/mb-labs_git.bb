@@ -43,5 +43,6 @@ RRECOMMENDS:${PN} += " \
     kernel-module-ipi-lab \
     kernel-module-context-lab \
     kernel-module-current-lab \
+    kernel-module-irqthread-lab \
     kernel-module-hrtimer-lab \
 "
