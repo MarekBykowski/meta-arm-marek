@@ -45,4 +45,5 @@ RRECOMMENDS:${PN} += " \
     kernel-module-current-lab \
     kernel-module-irqthread-lab \
     kernel-module-hrtimer-lab \
+    kernel-module-pacing-lab \
 "
