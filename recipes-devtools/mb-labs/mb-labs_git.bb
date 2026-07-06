@@ -27,6 +27,7 @@ do_install() {
 RDEPENDS:${PN} += "vma-lab mmap-lab"
 RRECOMMENDS:${PN} += " \
     kernel-module-procfs-lab \
+    kernel-module-sysfs-lab \
     kernel-module-completion-lab \
     kernel-module-waitqueue-lab \
     kernel-module-workqueue-lab \
