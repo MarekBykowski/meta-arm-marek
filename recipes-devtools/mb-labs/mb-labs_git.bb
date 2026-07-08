@@ -35,6 +35,7 @@ RRECOMMENDS:${PN} += " \
     kernel-module-radix-tree-lab \
     kernel-module-rcu-lab \
     kernel-module-locking-lab \
+    kernel-module-locks-lab \
     kernel-module-lockdep-lab \
     kernel-module-atomics-lab \
     kernel-module-ptwalk-lab \
